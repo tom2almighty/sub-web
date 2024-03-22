@@ -3,7 +3,7 @@
     <div class="wrapper">
       <el-card class="form_card container">
         <div slot="header">
-          Lainbo's subconverter
+          Tom's subconverter
         </div>
         <el-container>
           <el-form size="medium" :model="form" label-width="88px" style="width: 100%">
@@ -22,7 +22,7 @@
                  :key="k"
                  :label="k"
                  :value="v"
-                 :disabled="![backendLink.lainboExperimental, backendLink.feiyang].includes(form.customBackend) && v==='singbox'"
+                 :disabled="![backendLink.feiyang].includes(form.customBackend) && v==='singbox'"
                 >
                 </el-option>
               </el-select>
@@ -191,15 +191,14 @@ const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config/upload'
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const backendLink = {
-  lainboEnhance: 'https://api-sub.ours.day/sub?',
-  lainboExperimental: 'https://suc.lainbo.com/sub?',
+  authorEnhance: 'https://subapi.grew.cc/sub?',
   feiyang: 'https://api.v1.mk/sub?',
   sublink: 'https://api.sublink.dev/sub?',
   nx: 'https://api.nexconvert.com/sub?',
   amy: 'https://amyconvert.com/sub?',
   imm: 'https://immconvert.com/sub?',
 }
-const originBackend = backendLink.lainboEnhance
+const originBackend = backendLink.authorEnhance
 export default {
   data() {
     return {
@@ -214,7 +213,7 @@ export default {
           Clash: "clash",
           Surge3: "surge&ver=3",
           Surge4: "surge&ver=4",
-          "Sing-Box(仅Lainbo实验性、肥羊后端支持)": "singbox",
+          "Sing-Box(仅肥羊后端支持)": "singbox",
           Quantumult: "quan",
           QuantumultX: "quanx",
           Surfboard: "surfboard",
@@ -226,6 +225,7 @@ export default {
           ssd: "ssd",
           ClashR: "clashr",
           Surge2: "surge&ver=2",
+          mixed: "mixed",
         },
         backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
         remoteConfig: [
@@ -233,22 +233,23 @@ export default {
             label: "customized",
             options: [
               {
-                label: "Lainbo's config 默认配置",
-                value: "https://u.lainbo.com/clash-config"
+                label: "默认配置",
+                value: "https://raw.githubusercontent.com/tom2almighty/files/master/clash.ini"
               },
               {
-                label: "Lainbo's config 仅解决DNS泄露",
-                value: "https://u.lainbo.com/clash-config-mini"
-              },
-              {
-                label: "Lainbo's config 黑名单模式",
-                value: "https://u.lainbo.com/clash-config-blocklist"
-              },
+                label: "精简配置",
+                value: "https://raw.githubusercontent.com/tom2almighty/files/master/clash_mini.ini"
+              }
             ]
           },
           {
             label: "ACL4SSR",
             options: [
+              {
+                label: "ACL4SSR_Online",
+                value:
+                  "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
+              },
               {
                 label: "ACL4SSR_Online_Mini",
                 value:
@@ -266,7 +267,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: originBackend,
-        remoteConfig: "https://u.lainbo.com/clash-config",
+        remoteConfig: "https://raw.githubusercontent.com/tom2almighty/files/master/clash.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -294,12 +295,8 @@ export default {
       },
       backendUrlOptions: [
         {
-          label: 'Lainbo的后端',
-          value: backendLink.lainboEnhance
-        },
-        {
-          label: 'Lainbo的实验性后端',
-          value: backendLink.lainboExperimental
+          label: '作者后端',
+          value: backendLink.authorEnhance
         },
         {
           label: '肥羊增强型后端',
@@ -642,7 +639,7 @@ export default {
   computed: {
     // 当前是支持singbox的后端
     isSingboxBackend() {
-      return [backendLink.lainboExperimental, backendLink.feiyang].includes(this.form.customBackend);
+      return [backendLink.feiyang].includes(this.form.customBackend);
     }
   }
 };
