@@ -234,11 +234,11 @@ export default {
             options: [
               {
                 label: "默认配置",
-                value: "https://raw.githubusercontent.com/tom2almighty/files/master/clash.ini"
+                value: "https://raw.githubusercontent.com/tom2almighty/files/master/conf/clash.ini"
               },
               {
                 label: "精简配置",
-                value: "https://raw.githubusercontent.com/tom2almighty/files/master/clash_mini.ini"
+                value: "https://raw.githubusercontent.com/tom2almighty/files/master/conf/clash_mini.ini"
               }
             ]
           },
