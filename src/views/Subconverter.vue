@@ -192,7 +192,7 @@ const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/config
 const tgBotLink = process.env.VUE_APP_BOT_LINK
 const backendLink = {
   authorEnhance: 'https://subapi.grew.cc/sub?',
-  feiyang: 'https://api.v1.mk/sub?',
+  feiyang: 'https://url.v1.mk/sub?',
   sublink: 'https://api.sublink.dev/sub?',
   nx: 'https://api.nexconvert.com/sub?',
   amy: 'https://amyconvert.com/sub?',
@@ -234,11 +234,11 @@ export default {
             options: [
               {
                 label: "默认配置",
-                value: "https://raw.githubusercontent.com/tom2almighty/files/master/conf/clash.ini"
+                value: "https://raw.githubusercontent.com/tom2almighty/files/main/conf/clash.ini"
               },
               {
                 label: "精简配置",
-                value: "https://raw.githubusercontent.com/tom2almighty/files/master/conf/clash_mini.ini"
+                value: "https://raw.githubusercontent.com/tom2almighty/files/main/conf/clash_mini.ini"
               }
             ]
           },
@@ -620,8 +620,8 @@ export default {
       const customBackendMap = [
         { key: 'oxycontin.cc', value: backendLink.sublink },
         { key: '-ytoo', value: backendLink.sublink },
-        { key: 'ljcmlu.lol', value: backendLink.amy },
-        { key: '-nx', value: backendLink.amy },
+        { key: 'ljcmlu.lol', value: backendLink.nx },
+        { key: '-nx', value: backendLink.nx },
         { key: 'vlrzgf.sbs', value: backendLink.imm },
         { key: '-imm', value: backendLink.imm },
       ];
