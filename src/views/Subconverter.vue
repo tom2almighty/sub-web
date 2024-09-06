@@ -3,7 +3,7 @@
     <div class="wrapper">
       <el-card class="form_card container">
         <div slot="header">
-          Tom's subconverter
+          subconverter
         </div>
         <el-container>
           <el-form size="medium" :model="form" label-width="88px" style="width: 100%">
