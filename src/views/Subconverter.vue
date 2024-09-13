@@ -267,7 +267,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: originBackend,
-        remoteConfig: "https://raw.githubusercontent.com/tom2almighty/files/master/clash.ini",
+        remoteConfig: "https://raw.githubusercontent.com/tom2almighty/files/main/conf/clash.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
